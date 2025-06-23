@@ -23,3 +23,31 @@ body {
   background: var(--background);
   color: var(--foreground);
 }
+
+/* Ensure Orbitron is used everywhere */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-orbitron), 'Orbitron', monospace;
+  font-weight: 700;
+}
+
+p, span, div, button, input {
+  font-family: var(--font-orbitron), 'Orbitron', monospace;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #6b63ff, #d946ef);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #5a4fd8, #c026d3);
+}
