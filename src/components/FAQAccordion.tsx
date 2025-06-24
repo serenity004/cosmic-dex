@@ -1,7 +1,5 @@
 'use client';
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Plus, Minus } from 'lucide-react';
 
 const faqs = [
   {
@@ -36,26 +34,20 @@ export function FAQAccordion() {
             >
               {faq.question}
               <span className="ml-2 text-cosmic-400 flex items-center">
-                {open === idx ? <Minus className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
+                {open === idx ? '−' : '+'}
               </span>
             </button>
-            <AnimatePresence initial={false}>
               {open === idx && (
-                <motion.div
-                  key="content"
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: 'auto', opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="overflow-hidden px-6 pb-4 text-gray-300 border-t border-cosmic-400/20"
-                >
+              <div className="overflow-hidden px-6 pb-4 text-gray-300 border-t border-cosmic-400/20">
                   {faq.answer}
-                </motion.div>
+              </div>
               )}
-            </AnimatePresence>
           </div>
         ))}
       </div>
     </div>
   );
 } 
+
+// Add default export as well
+export default FAQAccordion; 

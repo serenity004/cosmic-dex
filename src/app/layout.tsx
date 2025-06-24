@@ -4,6 +4,7 @@ import "./globals.css";
 import { WalletProvider } from "@/components/WalletProvider";
 import { Footer } from "@/components/Footer";
 import { Navigation } from "@/components/Navigation";
+import AnimatedBackground from "@/components/AnimatedBackground";
 
 const orbitron = Orbitron({
   subsets: ["latin"],
@@ -38,9 +39,10 @@ export default function RootLayout({
     <html lang="en" className={`${orbitron.variable} font-orbitron`}>
       <body className="font-orbitron bg-void text-white antialiased min-h-screen">
         <WalletProvider>
+          <AnimatedBackground />
           <Navigation />
           {/* <Navbar /> removed, use Navigation in pages if needed */}
-          <div className="pt-20 min-h-[80vh]">{children}</div>
+          <div className="pt-20 min-h-[80vh] relative z-10">{children}</div>
           <Footer />
         </WalletProvider>
       </body>

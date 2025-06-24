@@ -1,10 +1,9 @@
-import { FAQAccordion } from '@/components/FAQAccordion';
-import { motion } from 'framer-motion';
+import FAQAccordion from '@/components/FAQAccordion';
 
 export default function FAQPage() {
   return (
-    <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+    <div>
       <FAQAccordion />
-    </motion.div>
+    </div>
   );
 } 
